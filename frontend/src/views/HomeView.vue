@@ -15,15 +15,15 @@ onMounted(() => {
     
     <!-- 1. HERO SECTION -->
     <section class="flex flex-col items-center justify-center mt-12 text-center">
-      <!-- Blocky Logo Placeholder -->
-      <div class="flex items-center justify-center w-32 h-32 mb-12 transition-all border-4 bg-jaroo-black border-jaroo-cyan shadow-pixel hover:shadow-pixel-hover hover:translate-y-1">
-        <span class="text-xs text-white font-pixel">LOGO.SPRITE</span>
+      <!-- Replaced the placeholder with your actual studio logo -->
+      <div class="flex items-center justify-center w-48 h-48 mb-12 transition-all border-4 bg-jaroo-black border-jaroo-cyan shadow-pixel hover:shadow-pixel-hover hover:translate-y-1">
+        <img src="../assets/studio-logo.png" alt="Jaroo Studio Logo" class="object-contain w-full h-full p-4 render-pixelated" />
       </div>
       
       <h1 class="mb-6 text-4xl leading-tight text-white font-pixel md:text-6xl">
         WE BUILD <br><span class="text-jaroo-cyan">PIXEL WORLDS</span>
       </h1>
-      <p class="max-w-2xl mx-auto text-2xl font-terminal text-jaroo-cyan-dark">
+      <p class="max-w-2xl mx-auto text-2xl text-jaroo-cyan-dark font-terminal">
         INDIE GAME DEVELOPMENT / CUSTOM ENGINE ARCHITECTURE
       </p>
     </section>
@@ -31,10 +31,10 @@ onMounted(() => {
     <!-- 2. CUSTOM ENGINE TERMINAL -->
     <section class="w-full p-1 border-4 bg-jaroo-black border-jaroo-cyan shadow-pixel">
       <!-- Terminal Header bar -->
-      <div class="flex justify-between w-full p-2 text-xs text-black bg-jaroo-cyan font-pixel">
-        <span>godot_custom_build.exe</span>
-        <span>[X]</span>
-      </div>
+      <div class="flex items-center justify-center w-48 h-48 border-4 border-dashed border-jaroo-cyan-dark">
+          <!-- Replaced the placeholder with your custom engine logo -->
+          <img src="../assets/engine-logo.png" alt="Custom Godot Engine" class="object-contain w-full h-full p-2 render-pixelated" />
+        </div>
       
       <div class="items-center gap-12 p-8 md:flex bg-jaroo-surface">
         <div class="flex-1 mb-8 md:mb-0">

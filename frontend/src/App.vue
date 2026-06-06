@@ -13,8 +13,9 @@ import { RouterView, RouterLink } from 'vue-router'
         </RouterLink>
         
         <nav class="flex gap-8 text-xs tracking-widest font-pixel">
-          <RouterLink to="/games" class="transition-transform hover:text-white hover:-translate-y-1">GAMES</RouterLink>
-          <RouterLink to="/about" class="transition-transform hover:text-white hover:-translate-y-1">ABOUT</RouterLink>
+          <RouterLink to="/games" class="transition-transform hover:text-jaroo-magenta hover:-translate-y-1">GAMES</RouterLink>
+          <RouterLink to="/docs" class="transition-transform hover:text-jaroo-yellow hover:-translate-y-1">DOCS</RouterLink>
+          <RouterLink to="/about" class="transition-transform hover:text-jaroo-cyan hover:-translate-y-1">ABOUT</RouterLink>
           <RouterLink to="/contact" class="transition-transform hover:text-white hover:-translate-y-1">CONTACT</RouterLink>
         </nav>
       </div>

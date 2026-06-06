@@ -7,6 +7,10 @@ const gameStore = useGameStore()
 onMounted(() => {
   gameStore.fetchGames()
 })
+
+const getImageUrl = (url: string) => {
+  return url ? url : 'https://via.placeholder.com/400x300/050505/00F0FF?text=NO_SIGNAL'
+}
 </script>
 
 <template>
@@ -23,21 +27,23 @@ onMounted(() => {
         v-for="game in gameStore.games" 
         :key="game.id"
         :to="{ name: 'game-details', params: { slug: game.slug } }"
-        class="flex flex-col p-4 transition-all border-4 bg-jaroo-surface border-jaroo-cyan shadow-pixel hover:shadow-pixel-hover hover:translate-y-1 group h-80"
+        class="flex flex-col p-4 transition-all border-4 h-96 bg-jaroo-surface border-jaroo-cyan shadow-pixel hover:shadow-pixel-yellow hover:-translate-y-2 group hover:border-jaroo-yellow"
       >
-        <!-- The Game "Screen" -->
-        <div class="relative flex items-center justify-center flex-grow w-full mb-4 overflow-hidden bg-black border-2 border-jaroo-cyan-dark">
-          <span class="font-terminal text-jaroo-cyan-dark">NO SIGNAL</span>
-          
-          <!-- Scanline overlay effect -->
-          <div class="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.05)_50%,transparent_50%)] bg-[length:100%_4px] pointer-events-none group-hover:bg-[length:100%_2px] transition-all"></div>
+        <!-- The Game Image -->
+        <div class="relative flex-grow w-full mb-4 overflow-hidden border-2 bg-jaroo-black border-jaroo-cyan-dark group-hover:border-jaroo-yellow">
+          <img 
+            :src="getImageUrl(game.cover_image_url)" 
+            :alt="game.title"
+            class="object-cover w-full h-full transition-transform duration-500 render-pixelated group-hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-[linear-gradient(rgba(0,240,255,0.05)_50%,transparent_50%)] bg-[length:100%_4px] pointer-events-none transition-all"></div>
         </div>
 
-        <h2 class="mb-2 text-lg text-white truncate font-pixel">{{ game.title }}</h2>
+        <h2 class="mb-2 text-lg text-white truncate font-pixel group-hover:text-jaroo-yellow">{{ game.title }}</h2>
         
-        <div class="flex justify-between items-end font-pixel text-[10px]">
-          <span class="text-jaroo-cyan-dark">{{ game.genre }}</span>
-          <span :class="game.status === 'Released' ? 'text-green-400' : 'text-yellow-400'">
+        <div class="flex items-end justify-between font-pixel text-[10px]">
+          <span class="text-jaroo-magenta">{{ game.genre }}</span>
+          <span :class="game.status === 'Released' ? 'text-green-400' : 'text-jaroo-yellow'">
             [{{ game.status }}]
           </span>
         </div>

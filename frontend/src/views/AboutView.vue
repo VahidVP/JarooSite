@@ -8,52 +8,52 @@
 
     <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
       
-      <!-- Player 1 -->
-      <div class="relative p-6 border-4 border-jaroo-cyan bg-jaroo-surface">
+      <!-- Player 1: Vahid -->
+      <div class="relative p-6 border-4 bg-jaroo-surface border-jaroo-cyan group hover:animate-glitch">
         <span class="absolute px-2 text-xs -top-4 left-4 bg-jaroo-black font-pixel text-jaroo-cyan">PLAYER_01</span>
         
         <div class="flex items-center justify-center w-32 h-32 mx-auto mb-6 bg-black border-2 border-jaroo-cyan">
-          <span class="font-pixel text-[10px]">AVATAR</span>
+          <!-- Add your personal avatar image here if you have one! -->
+          <span class="font-pixel text-[10px] text-jaroo-cyan-dark">QASEMSAG.SPRITE</span>
         </div>
         
-        <h2 class="mb-2 text-2xl text-center text-white font-pixel">VAHID</h2>
-        <p class="font-pixel text-[10px] text-jaroo-cyan-dark text-center mb-6">CLASS: Lead Developer / Architect</p>
+        <h2 class="mb-2 text-2xl text-center text-white font-pixel">VAHID <span class="text-xs text-jaroo-cyan">"QasemSag"</span></h2>
+        <p class="font-pixel text-[10px] text-jaroo-cyan-dark text-center mb-6">CLASS: Lead Game Designer / Co-Founder</p>
         
-        <ul class="space-y-2 text-xl text-gray-400 font-terminal">
-          <li>STR: Full-Stack Architecture</li>
-          <li>INT: Custom Godot Tooling</li>
-          <li>AGI: C#, Python, Vue</li>
+        <p class="mb-4 text-xl text-gray-400 font-terminal">
+          Primary focus on world-building, mechanics, and pixel art, with a heavy secondary spec in codebase architecture.
+        </p>
+
+        <ul class="space-y-2 text-xl text-gray-500 font-terminal">
+          <li>> STR: Game Design & Mechanics</li>
+          <li>> INT: Pixel Art Aesthetics</li>
+          <li>> AGI: Cross-Discipline Coding</li>
         </ul>
       </div>
 
-      <!-- Player 2 -->
-      <div class="relative p-6 border-4 border-jaroo-cyan bg-jaroo-surface">
+      <!-- Player 2: Hamidreza -->
+      <div class="relative p-6 border-4 bg-jaroo-surface border-jaroo-cyan group hover:animate-glitch">
         <span class="absolute px-2 text-xs -top-4 left-4 bg-jaroo-black font-pixel text-jaroo-cyan">PLAYER_02</span>
         
         <div class="flex items-center justify-center w-32 h-32 mx-auto mb-6 bg-black border-2 border-jaroo-cyan">
-          <span class="font-pixel text-[10px]">AVATAR</span>
+           <!-- Add Hamidreza's avatar image here -->
+          <span class="font-pixel text-[10px] text-jaroo-cyan-dark">JASEMSAG.SPRITE</span>
         </div>
         
-        <h2 class="mb-2 text-2xl text-center text-white font-pixel">CO-FOUNDER</h2>
-        <p class="font-pixel text-[10px] text-jaroo-cyan-dark text-center mb-6">CLASS: Lead Artist / Game Design</p>
+        <h2 class="mb-2 text-2xl text-center text-white font-pixel">HAMIDREZA <span class="text-xs text-jaroo-cyan">"JasemSag"</span></h2>
+        <p class="font-pixel text-[10px] text-jaroo-cyan-dark text-center mb-6">CLASS: Lead Developer / Co-Founder</p>
         
-        <ul class="space-y-2 text-xl text-gray-400 font-terminal">
-          <li>STR: Pixel Art Aesthetics</li>
-          <li>INT: Level Design</li>
-          <li>AGI: 2D/3D Hybrid Environments</li>
+        <p class="mb-4 text-xl text-gray-400 font-terminal">
+          Primary focus on engine architecture, tooling, and backend systems, with a strong secondary spec in level design.
+        </p>
+
+        <ul class="space-y-2 text-xl text-gray-500 font-terminal">
+          <li>> STR: Custom Godot Tooling</li>
+          <li>> INT: Level & Environment Design</li>
+          <li>> AGI: Performance Optimization</li>
         </ul>
       </div>
 
     </div>
   </div>
 </template>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, RouterLink } from 'vue-router'
 import { useGameStore } from '../stores/gameStore'
 
 const route = useRoute()
@@ -13,48 +13,68 @@ onMounted(() => {
 const game = computed(() => {
   return gameStore.games.find(g => g.slug === route.params.slug)
 })
+
+// Fallback image generator
+const getImageUrl = (url: string) => {
+  return url ? url : 'https://via.placeholder.com/800x400/050505/FF00FF?text=MISSING_ASSET.PNG'
+}
 </script>
 
 <template>
-  <div class="flex items-center justify-center min-h-screen p-8">
-    <div v-if="!game && gameStore.isLoading" class="text-xl text-gray-500 animate-pulse">
-      Syncing game configurations...
+  <div class="w-full max-w-5xl px-6 py-16 mx-auto">
+    <div v-if="!game && gameStore.isLoading" class="text-xl text-center font-pixel animate-blink text-jaroo-magenta">
+      LOADING_MEMORY_BLOCK...
     </div>
 
     <div v-else-if="!game" class="text-center">
-      <h2 class="mb-4 text-2xl font-bold text-red-500">Game Not Found</h2>
-      <RouterLink to="/" class="text-jaroo-accent hover:underline">Return to catalog</RouterLink>
+      <h2 class="mb-4 text-2xl text-red-500 font-pixel">ERROR: GAME_NOT_FOUND</h2>
+      <RouterLink to="/games" class="text-xl hover:underline text-jaroo-cyan font-terminal">> RETURN_TO_CATALOG</RouterLink>
     </div>
 
-    <div v-else class="w-full max-w-3xl p-8 bg-gray-900 border border-gray-800 shadow-2xl rounded-2xl">
-      <RouterLink to="/" class="block mb-6 font-mono text-sm text-gray-500 transition-colors hover:text-jaroo-accent">
-        &lt; Back to Catalog
+    <!-- Main Detail Layout -->
+    <div v-else class="flex flex-col gap-8">
+      
+      <!-- Back button -->
+      <RouterLink to="/games" class="text-xl text-gray-500 transition-colors font-terminal hover:text-jaroo-cyan w-fit">
+        > RETURN_TO_CATALOG
       </RouterLink>
 
-      <div class="md:flex md:gap-8">
-        <div class="w-full md:w-1/3 aspect-[3/4] bg-gray-800 rounded-xl mb-6 md:mb-0 flex items-center justify-center border border-gray-700">
-          <img 
-                v-if="game.cover_image_url"
-                :src="game.cover_image_url" 
-                :alt="game.title"
-                class="object-cover w-full h-full transition-all duration-700 ease-out opacity-40 group-hover:opacity-50 group-hover:scale-105"
-            />
+      <!-- Hero Image / Cover Art -->
+      <div class="relative w-full overflow-hidden border-4 shadow-pixel-magenta border-jaroo-magenta bg-jaroo-surface aspect-video scanlines">
+        <img 
+          :src="getImageUrl(game.cover_image_url)" 
+          :alt="game.title" 
+          class="object-cover w-full h-full render-pixelated"
+        />
+      </div>
+
+      <!-- Game Data -->
+      <div class="p-8 border-4 bg-jaroo-black border-jaroo-cyan">
+        <div class="flex flex-col items-start justify-between gap-4 mb-8 md:flex-row md:items-end">
+          <div>
+            <h1 class="mb-2 text-4xl text-white font-pixel">{{ game.title }}</h1>
+            <div class="text-sm tracking-widest uppercase font-pixel text-jaroo-magenta">{{ game.genre }}</div>
+          </div>
+          
+          <div class="px-4 py-2 text-xs text-black bg-jaroo-yellow font-pixel">
+            STATUS: {{ game.status }}
+          </div>
+        </div>
+        
+        <div class="pt-8 border-t-4 border-dashed border-jaroo-cyan-dark">
+          <p class="text-2xl leading-relaxed text-gray-300 font-terminal">
+            {{ game.description || "NO_DESCRIPTION_DATA_AVAILABLE_IN_CURRENT_MEMORY_BANK." }}
+          </p>
         </div>
 
-        <div class="flex-1">
-          <h1 class="mb-2 text-4xl font-black text-white">{{ game.title }}</h1>
-          <div class="mb-6 font-mono text-sm text-jaroo-accent">{{ game.genre }}</div>
-          
-          <p class="mb-6 leading-relaxed text-gray-300">
-            {{ game.description || "No transmission description available for this designated project assignment." }}
-          </p>
-
-          <div class="flex items-center justify-between pt-4 font-mono text-sm border-t border-gray-800">
-            <span class="text-gray-500">Status:</span>
-            <span :class="game.status === 'Released' ? 'text-green-400' : 'text-yellow-400'" class="font-bold">
-              {{ game.status }}
-            </span>
-          </div>
+        <!-- Action Buttons -->
+        <div class="flex gap-6 mt-12">
+          <button class="p-4 text-xs text-black transition-all bg-jaroo-cyan font-pixel hover:bg-white hover:shadow-pixel">
+            PLAY_GAME.exe
+          </button>
+          <button class="p-4 text-xs transition-all border-4 text-jaroo-cyan border-jaroo-cyan font-pixel hover:bg-jaroo-surface">
+            VIEW_SOURCE
+          </button>
         </div>
       </div>
     </div>
