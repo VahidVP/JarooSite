@@ -11,8 +11,11 @@ class Game(models.Model):
         choices=[('In Development', 'In Development'), ('Released', 'Released')],
         default='In Development'
     )
-    cover_image_url = models.URLField(blank=True, help_text="Link to game poster or asset art")
-
+    cover_image_url = models.CharField(
+        max_length=500, 
+        blank=True, 
+        help_text="Relative path (e.g., /games/image.png) or full URL to game poster"
+    )
     # This is like overriding the ToString() method in C#
     def __str__(self):
         return self.title
