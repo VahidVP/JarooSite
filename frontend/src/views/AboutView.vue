@@ -55,5 +55,25 @@
       </div>
 
     </div>
+
+    <div class="w-full p-8 mt-16 transition-colors border-4 bg-jaroo-surface border-jaroo-panel shadow-pixel group hover:border-jaroo-cyan">
+      <h3 class="mb-8 text-xl text-white font-pixel">> ESTABLISH_CONNECTION</h3>
+      
+      <div class="flex flex-wrap gap-8 text-2xl text-gray-400 font-terminal">
+        <a href="https://linkedin.com/company/jaroo-studio" target="_blank" class="flex items-center gap-2 transition-colors hover:text-jaroo-cyan">
+          <span class="text-jaroo-cyan">[*]</span> LINKEDIN
+        </a>
+        <a href="#" target="_blank" class="flex items-center gap-2 transition-colors hover:text-jaroo-magenta">
+          <span class="text-jaroo-magenta">[*]</span> INSTAGRAM
+        </a>
+        <a href="#" target="_blank" class="flex items-center gap-2 transition-colors hover:text-white">
+          <span class="text-white">[*]</span> X_TWITTER
+        </a>
+        <a href="#" target="_blank" class="flex items-center gap-2 transition-colors hover:text-jaroo-red">
+          <span class="text-jaroo-red">[*]</span> ITCH.IO_PORTAL
+        </a>
+      </div>
+    </div>
+
   </div>
 </template>

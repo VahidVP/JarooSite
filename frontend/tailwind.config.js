@@ -7,12 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'jaroo-black': '#000000',       // True Void Black
-        'jaroo-surface': '#0a0a0a',     // Dark Charcoal for sections
-        'jaroo-panel': '#141414',       // Slightly lighter for depth
-        'jaroo-cyan': '#00F0FF',        // Primary Tech Color
+        'jaroo-black': '#000000',
+        'jaroo-surface': '#0a0a0a',
+        'jaroo-panel': '#141414',
+        'jaroo-cyan': '#00F0FF',
         'jaroo-cyan-dark': '#008B99',
-        'jaroo-crimson': '#FF003C',     // Sharp aggressive accent
+        'jaroo-crimson': '#FF003C',
+        'jaroo-magenta': '#FF00FF',
+        'jaroo-red': '#D95C45',
       },
       fontFamily: {
         'pixel': ['"Press Start 2P"', 'cursive'],

@@ -19,10 +19,8 @@ const getImageUrl = (url?: string) => {
 </script>
 
 <template>
-  <!-- Root container now spans the full width of the browser -->
   <div class="flex flex-col w-full pb-24">
     
-    <!-- 1. HERO SECTION (Full Bleed Background) -->
     <section class="relative flex flex-col items-center justify-center w-full min-h-[70vh] bg-jaroo-black">
       <div class="flex items-center justify-center w-48 h-48 mb-12 transition-all border-4 bg-jaroo-black border-jaroo-cyan shadow-pixel animate-float">
         <img src="../assets/studio-logo.png" alt="Jaroo Studio Logo" class="object-contain w-full h-full p-4 render-pixelated" />
@@ -36,17 +34,13 @@ const getImageUrl = (url?: string) => {
       </p>
     </section>
 
-    <!-- 2. AUTOMATIC SCROLLING TICKER (Fixed CSS Marquee) -->
-    <!-- The flex container with overflow-hidden ensures the scroll doesn't break the page width -->
     <div class="flex w-full py-3 overflow-hidden text-black border-y-4 border-jaroo-cyan-dark bg-jaroo-cyan">
-      <!-- Container 1 -->
       <div class="flex whitespace-nowrap animate-marquee shrink-0">
         <span class="mx-8 text-xs font-pixel">>> SYSTEM ONLINE</span>
         <span class="mx-8 text-xs font-pixel">>> QASEMSAG AND JASEMSAG ARE IN THE LAB</span>
         <span class="mx-8 text-xs font-pixel">>> CUSTOM GODOT ARCHITECTURE</span>
         <span class="mx-8 text-xs font-pixel">>> PREPARING LATEST DROP</span>
       </div>
-      <!-- Container 2 (Exact duplicate to create the seamless loop) -->
       <div class="flex whitespace-nowrap animate-marquee shrink-0" aria-hidden="true">
         <span class="mx-8 text-xs font-pixel">>> SYSTEM ONLINE</span>
         <span class="mx-8 text-xs font-pixel">>> QASEMSAG AND JASEMSAG ARE IN THE LAB</span>
@@ -55,9 +49,7 @@ const getImageUrl = (url?: string) => {
       </div>
     </div>
 
-    <!-- 3. CUSTOM ENGINE TERMINAL -->
     <section class="w-full py-24 border-b-4 bg-jaroo-surface border-jaroo-panel">
-      <!-- Inner container restrains the text from stretching too wide on big monitors -->
       <div class="w-full max-w-[1400px] mx-auto px-6">
         
         <div class="w-full p-1 border-4 bg-jaroo-black border-jaroo-cyan shadow-pixel">
@@ -86,7 +78,6 @@ const getImageUrl = (url?: string) => {
       </div>
     </section>
 
-    <!-- 4. DYNAMIC FEATURED DROP -->
     <section class="flex flex-col items-center w-full py-24 bg-jaroo-panel">
       <div class="w-full max-w-[1400px] mx-auto px-6 flex flex-col items-center">
         

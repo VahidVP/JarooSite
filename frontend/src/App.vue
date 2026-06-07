@@ -29,8 +29,19 @@ import { RouterView, RouterLink } from 'vue-router'
       </RouterView>
     </main>
 
-    <footer class="w-full p-6 text-center font-pixel text-[10px] text-jaroo-cyan-dark border-t-4 border-jaroo-cyan-dark mt-24">
-      © {{ new Date().getFullYear() }} JAROO STUDIO. PRESS START TO CONTINUE.
+    <footer class="w-full mt-24 border-t-4 bg-jaroo-black border-jaroo-panel">
+      <div class="flex flex-col items-center justify-between w-full p-6 mx-auto md:flex-row max-w-7xl">
+        <div class="mb-4 text-xs text-gray-500 font-pixel md:mb-0">
+          © {{ new Date().getFullYear() }} JAROO STUDIO. PRESS START.
+        </div>
+        
+        <div class="flex gap-6 text-sm font-pixel text-jaroo-cyan-dark">
+          <a href="#" class="transition-colors hover:text-jaroo-cyan">LINKEDIN</a>
+          <a href="#" class="transition-colors hover:text-jaroo-magenta">INSTAGRAM</a>
+          <a href="#" class="transition-colors hover:text-white">X</a>
+          <a href="#" class="transition-colors hover:text-jaroo-red ">ITCH.IO</a>
+        </div>
+      </div>
     </footer>
   </div>
 </template>
