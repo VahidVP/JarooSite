@@ -14,7 +14,7 @@
         
         <div class="flex items-center justify-center w-32 h-32 mx-auto mb-6 bg-black border-2 border-jaroo-cyan">
           <!-- Add your personal avatar image here if you have one! -->
-          <span class="font-pixel text-[10px] text-jaroo-cyan-dark">QASEMSAG.SPRITE</span>
+          <img src="../assets/Vahid.png" alt="QASEMSAG" class="object-contain w-full h-full p-2 render-pixelated" />
         </div>
         
         <h2 class="mb-2 text-2xl text-center text-white font-pixel">VAHID <span class="text-xs text-jaroo-cyan">"QasemSag"</span></h2>
@@ -37,7 +37,7 @@
         
         <div class="flex items-center justify-center w-32 h-32 mx-auto mb-6 bg-black border-2 border-jaroo-cyan">
            <!-- Add Hamidreza's avatar image here -->
-          <span class="font-pixel text-[10px] text-jaroo-cyan-dark">JASEMSAG.SPRITE</span>
+          <img src="../assets/Hamidreza.jpg" alt="JASEMSAG" class="object-contain w-full h-full p-2 render-pixelated" />
         </div>
         
         <h2 class="mb-2 text-2xl text-center text-white font-pixel">HAMIDREZA <span class="text-xs text-jaroo-cyan">"JasemSag"</span></h2>
