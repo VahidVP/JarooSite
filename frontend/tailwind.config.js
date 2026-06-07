@@ -7,29 +7,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        'jaroo-black': '#050505',
-        'jaroo-cyan': '#00F0FF',
+        'jaroo-black': '#000000',       // True Void Black
+        'jaroo-surface': '#0a0a0a',     // Dark Charcoal for sections
+        'jaroo-panel': '#141414',       // Slightly lighter for depth
+        'jaroo-cyan': '#00F0FF',        // Primary Tech Color
         'jaroo-cyan-dark': '#008B99',
-        'jaroo-magenta': '#FF00FF',
-        'jaroo-yellow': '#FFEA00',
-        'jaroo-surface': '#111111',
+        'jaroo-crimson': '#FF003C',     // Sharp aggressive accent
       },
       fontFamily: {
         'pixel': ['"Press Start 2P"', 'cursive'],
         'terminal': ['"VT323"', 'monospace'],
       },
       boxShadow: {
-        'pixel': '8px 8px 0px 0px rgba(0, 240, 255, 0.8)',
-        'pixel-hover': '4px 4px 0px 0px rgba(0, 240, 255, 1)',
-        'pixel-magenta': '8px 8px 0px 0px rgba(255, 0, 255, 0.8)',
-        'pixel-yellow': '8px 8px 0px 0px rgba(255, 234, 0, 0.8)',
+        'pixel': '8px 8px 0px 0px rgba(0, 240, 255, 0.3)',
+        'pixel-hover': '4px 4px 0px 0px rgba(0, 240, 255, 0.8)',
+        'pixel-crimson': '8px 8px 0px 0px rgba(255, 0, 60, 0.5)',
       },
       animation: {
         'blink': 'blink 1s step-end infinite',
         'glitch': 'glitch 0.2s linear infinite',
-        'float': 'float 4s ease-in-out infinite',          // Added
-        'marquee': 'marquee 15s linear infinite',          // Added
-        'spin-slow': 'spin 15s linear infinite',           // Added
+        'float': 'float 4s ease-in-out infinite',
+        'marquee': 'marquee 25s linear infinite', 
+        'spin-slow': 'spin 15s linear infinite',
       },
       keyframes: {
         blink: {
@@ -44,13 +43,14 @@ export default {
           '80%': { transform: 'translate(1px, -1px)' },
           '100%': { transform: 'translate(0)' },
         },
-        float: {                                           // Added
+        float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-15px)' },
         },
-        marquee: {                                         // Added
-          '0%': { transform: 'translateX(0%)' },
-          '100%': { transform: 'translateX(-50%)' },
+        marquee: {
+          /* Translates exactly 100% of its own width for a perfect loop */
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' }, 
         }
       }
     },
